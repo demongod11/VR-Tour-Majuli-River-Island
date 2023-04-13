@@ -650,6 +650,10 @@ MonoBehaviour:
     type: 3}
   RightButtonPrefab: {fileID: 7948898508114606449, guid: 500f3b43bfc06de48b6e4a2e3bf808aa,
     type: 3}
+  UpButtonPrefab: {fileID: 4943008369612729435, guid: cf60c0e34eabfb348a6af07125f4ccac,
+    type: 3}
+  DownButtonPrefab: {fileID: 4140221800948738346, guid: 5979235fcf3ec0c458c979742ae341e4,
+    type: 3}
   shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &1936512460
 Transform:

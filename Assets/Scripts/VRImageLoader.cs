@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System;
 
 public class VRImageLoader : MonoBehaviour
 {
@@ -10,10 +9,20 @@ public class VRImageLoader : MonoBehaviour
     public GameObject vrImagePrefab; // Prefab for the VR image
     public GameObject LeftButtonPrefab; // Prefab for the VR image
     public GameObject RightButtonPrefab; // Prefab for the VR image
+    public GameObject UpButtonPrefab; // Prefab for the VR image
+    public GameObject DownButtonPrefab; // Prefab for the VR image
     public Shader shader;
+    public static Dictionary<string, List<string>> adjList;
+    public static Dictionary<int, string> imgMap;
+    public static Dictionary<string, int> corMap;
 
     void Start()
     {
+        adjList = new Dictionary<string, List<string>>();
+        imgMap = new Dictionary<int, string>();
+        corMap = new Dictionary<string, int>();
+
+        int x_cor = 0;
         string[] lines = imageListTextAsset.text.Split('\n');
         GameObject rawanapar = new GameObject();
         rawanapar.GetComponent<Transform>().position = new Vector3(0, 0, 0);
@@ -25,20 +34,47 @@ public class VRImageLoader : MonoBehaviour
             {
                 string[] values = line.Split(',');
                 string imageName = values[0].Trim();
-                float latitude = float.Parse(values[1].Trim());
-                float longitude = float.Parse(values[2].Trim());
-                float altitude = float.Parse(values[3].Trim());
-                float yaw = float.Parse(values[4].Trim());
+                List<string> value = new List<string>();
+                for(int i=1; i<5; i++)
+                {
+                    value.Add(values[i].Trim());
+                }
+                // float latitude = float.Parse(values[1].Trim());
+                // float longitude = float.Parse(values[2].Trim());
+                // float altitude = float.Parse(values[3].Trim());
+                float yaw = float.Parse(values[5].Trim());
+                adjList.Add(imageName, value);
+                
+                imgMap.Add(x_cor, imageName);
+                corMap.Add(imageName, x_cor);
 
-                Vector3 position = new Vector3(latitude, altitude, longitude);
+                Vector3 position = new Vector3(x_cor,0,0);
+                x_cor += 2;
 
                 // Create a new VR image at the specified position and rotation
                 GameObject vrImage = Instantiate(vrImagePrefab, position, Quaternion.Euler(0, yaw, 0));
-                GameObject leftButton = Instantiate(LeftButtonPrefab, position + new Vector3(-0.5f,0,0), Quaternion.Euler(0, 0, 0));
-                GameObject rightButton = Instantiate(RightButtonPrefab, position + new Vector3(0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+                if(adjList[imageName][0] != "-1")
+                {
+                    GameObject rightButton = Instantiate(RightButtonPrefab, position + new Vector3(0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+                    rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+                }
+                if (adjList[imageName][1] != "-1")
+                {
+                    GameObject downButton = Instantiate(DownButtonPrefab, position + new Vector3(0,-0.5f, 0), Quaternion.Euler(0, 0, 0));
+                    downButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+                }
+                if (adjList[imageName][2] != "-1")
+                {
+                    GameObject leftButton = Instantiate(LeftButtonPrefab, position + new Vector3(-0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+                    leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+                }
+                if (adjList[imageName][3] != "-1")
+                {
+                    GameObject upButton = Instantiate(UpButtonPrefab, position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0, 0, 0));
+                    upButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+                }
+
                 vrImage.transform.SetParent(rawanapar.GetComponent<Transform>(),false);
-                leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
-                rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
 
                 // Load and apply the texture to the VR image
                 string imageUrl = Application.dataPath + "/Images/Rawanapar/" + imageName + ".JPG";
