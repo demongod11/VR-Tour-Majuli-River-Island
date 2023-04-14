@@ -52,7 +52,7 @@ public class VRImageLoader : MonoBehaviour
                 if(flag == 0)
                 {
                     cnt++;
-                    spot_obj[cnt] = new GameObject(line);
+                    spot_obj[cnt] = new GameObject(line.Trim());
                     spot_obj[cnt].GetComponent<Transform>().position = new Vector3(0, 0, 0);
                 }
                 else
@@ -101,7 +101,6 @@ public class VRImageLoader : MonoBehaviour
 
                     // Load and apply the texture to the VR image
                     string imageUrl = Application.dataPath + "/Images/" + spot_obj[cnt].name + "/" + imageName + ".JPG";
-                  //  Debug.Log("/Images/" + spot_obj[cnt].name + "/" + imageName + ".JPG");
                     Material material = new Material(shader);
 
                     // Load the image from the specified URL
@@ -122,7 +121,6 @@ public class VRImageLoader : MonoBehaviour
 
     IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {
-        Debug.Log(url);
         // Create a new WWW object to load the image from the URL
         WWW www = new WWW(url);
 
