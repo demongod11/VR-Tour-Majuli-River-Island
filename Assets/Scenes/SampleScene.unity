@@ -654,7 +654,6 @@ MonoBehaviour:
     type: 3}
   DownButtonPrefab: {fileID: 4140221800948738346, guid: 5979235fcf3ec0c458c979742ae341e4,
     type: 3}
-  shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &1936512460
 Transform:
   m_ObjectHideFlags: 0

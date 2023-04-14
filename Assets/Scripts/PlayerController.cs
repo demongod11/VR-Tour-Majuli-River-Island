@@ -4,65 +4,50 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int old_x, x_left, x_right, x_down, x_up;
-    GameObject playerObj;
     Dictionary<string, List<string>> adjList;
-    Dictionary<int, string> imgMap;
-    Dictionary<string, int> corMap;
     string imgName, rightImgName, downImgName, leftImgName, upImgName;
-    private void Start()
-    {
-        playerObj = GameObject.FindWithTag("Player");
-    }
-
-    private void Update()
-    {
-        adjList = VRImageLoader.adjList;
-        imgMap = VRImageLoader.imgMap;
-        corMap = VRImageLoader.corMap;
-        old_x = (int)playerObj.transform.position.x;
-        imgName = imgMap[old_x];
-        rightImgName = adjList[imgName][0];
-        downImgName = adjList[imgName][1];
-        leftImgName = adjList[imgName][2];
-        upImgName = adjList[imgName][3];
-
-        if(rightImgName != "-1")
-        {
-            x_right = corMap[rightImgName];
-        }
-        if (downImgName != "-1")
-        {
-            x_down = corMap[downImgName];
-        }
-        if (leftImgName != "-1")
-        {
-            x_left = corMap[leftImgName];
-        }
-        if (upImgName != "-1")
-        {
-            x_up = corMap[upImgName];
-        }
-    }
 
     public void ShiftRight()
     {
+        imgName = VRImageLoader.vrImage.name;
+        rightImgName = VRImageLoader.adjList[imgName][0];
 
-        playerObj.transform.position = new Vector3(x_right, 0, 0);
-    }
-
-    public void ShiftLeft()
-    {
-        playerObj.transform.position = new Vector3(x_left, 0, 0);
-    }
-
-    public void ShiftUp()
-    {
-        playerObj.transform.position = new Vector3(x_up, 0, 0);
+        if (rightImgName != "-1")
+        {
+            VRImageLoader.ImageLoader(rightImgName);
+        }
     }
 
     public void ShiftDown()
     {
-        playerObj.transform.position = new Vector3(x_down, 0, 0);
+        imgName = VRImageLoader.vrImage.name;
+        downImgName = VRImageLoader.adjList[imgName][1];
+
+        if (downImgName != "-1")
+        {
+            VRImageLoader.ImageLoader(downImgName);
+        }
+    }
+
+    public void ShiftLeft()
+    {
+        imgName = VRImageLoader.vrImage.name;
+        leftImgName = VRImageLoader.adjList[imgName][2];
+
+        if (leftImgName != "-1")
+        {
+            VRImageLoader.ImageLoader(leftImgName);
+        }
+    }
+
+    public void ShiftUp()
+    {
+        imgName = VRImageLoader.vrImage.name;
+        upImgName = VRImageLoader.adjList[imgName][3];
+
+        if (upImgName != "-1")
+        {
+            VRImageLoader.ImageLoader(upImgName);
+        }
     }
 }

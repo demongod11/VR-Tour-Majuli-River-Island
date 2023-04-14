@@ -1,36 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using System.Linq;
 
 public class VRImageLoader : MonoBehaviour
 {
     public TextAsset imageListTextAsset; 
-    public GameObject vrImagePrefab; 
-    public GameObject LeftButtonPrefab; 
-    public GameObject RightButtonPrefab; 
-    public GameObject UpButtonPrefab; 
-    public GameObject DownButtonPrefab; 
-    public Shader shader;
+    public GameObject vrImagePrefab, LeftButtonPrefab, RightButtonPrefab, UpButtonPrefab, DownButtonPrefab;
+    public static GameObject vrImage, rightButton, leftButton, upButton, downButton;
+    public static Shader shader;
     public static Dictionary<string, List<string>> adjList;
-    public static Dictionary<int, string> imgMap;
-    public static Dictionary<string, int> corMap;
+    public static List<string> startImgNames;
+    GameObject canvasObj;
 
+    private static VRImageLoader instance;
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
+        shader = Shader.Find("Unlit/Texture");
+        canvasObj = GameObject.FindWithTag("canvas");
         adjList = new Dictionary<string, List<string>>();
-        imgMap = new Dictionary<int, string>();
-        corMap = new Dictionary<string, int>();
+        startImgNames = new List<string>();
 
-        int x_cor = 0;
         string[] lines = imageListTextAsset.text.Split('\n');
         string first_line = lines[0].Trim();
         int cnt = -2;
         int num_spots = int.Parse(first_line);
-        GameObject[] spot_obj = new GameObject[num_spots];
-
-        GameObject canvasObj = GameObject.FindWithTag("canvas");
+        int sec_flag = 0;
         foreach (string line in lines)
         {
             if(cnt == -2)
@@ -52,74 +50,98 @@ public class VRImageLoader : MonoBehaviour
                 if(flag == 0)
                 {
                     cnt++;
-                    spot_obj[cnt] = new GameObject(line.Trim());
-                    spot_obj[cnt].GetComponent<Transform>().position = new Vector3(0, 0, 0);
+                    sec_flag = 1;
                 }
                 else
                 {
                     string[] values = line.Split(',');
                     string imageName = values[0].Trim();
                     List<string> value = new List<string>();
-                    for (int i = 1; i < 5; i++)
+                    for (int i = 1; i < 6; i++)
                     {
                         value.Add(values[i].Trim());
                     }
+                    value.Add(cnt.ToString());
 
-                    float yaw = float.Parse(values[5].Trim());
+                    if(sec_flag == 1)
+                    {
+                        startImgNames.Add(imageName);
+                        sec_flag = 0;
+                    }
                     adjList.Add(imageName, value);
-
-                    imgMap.Add(x_cor, imageName);
-                    corMap.Add(imageName, x_cor);
-
-                    Vector3 position = new Vector3(x_cor, 0, 0);
-                    x_cor += 2;
-
-                    // Create a new VR image at the specified position and rotation
-                    GameObject vrImage = Instantiate(vrImagePrefab, position, Quaternion.Euler(0, yaw, 0));
-                    if (adjList[imageName][0] != "-1")
-                    {
-                        GameObject rightButton = Instantiate(RightButtonPrefab, position + new Vector3(0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-                        rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
-                    }
-                    if (adjList[imageName][1] != "-1")
-                    {
-                        GameObject downButton = Instantiate(DownButtonPrefab, position + new Vector3(0, -0.5f, 0), Quaternion.Euler(0, 0, 0));
-                        downButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
-                    }
-                    if (adjList[imageName][2] != "-1")
-                    {
-                        GameObject leftButton = Instantiate(LeftButtonPrefab, position + new Vector3(-0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-                        leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
-                    }
-                    if (adjList[imageName][3] != "-1")
-                    {
-                        GameObject upButton = Instantiate(UpButtonPrefab, position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0, 0, 0));
-                        upButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
-                    }
-
-                    vrImage.transform.SetParent(spot_obj[cnt].GetComponent<Transform>(), false);
-
-                    // Load and apply the texture to the VR image
-                    string imageUrl = Application.dataPath + "/Images/" + spot_obj[cnt].name + "/" + imageName + ".JPG";
-                    Material material = new Material(shader);
-
-                    // Load the image from the specified URL
-                    StartCoroutine(LoadImage(imageUrl, texture =>
-                    {
-                        // Set the albedo texture property of the material
-                        material.SetTexture("_MainTex", texture);
-
-                        // Assign the material to a game object or renderer
-                        vrImage.GetComponent<Renderer>().material = material;
-                        vrImage.name = imageName;
-                    }));
                 }
             }
         }
- 
+        vrImage = Instantiate(vrImagePrefab, new Vector3(0,0,0), Quaternion.Euler(0, 0, 0));
+        rightButton = Instantiate(RightButtonPrefab, new Vector3(0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+        rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        rightButton.SetActive(false);
+        downButton = Instantiate(DownButtonPrefab, new Vector3(0, -0.5f, 0), Quaternion.Euler(0, 0, 0));
+        downButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        downButton.SetActive(false);
+        leftButton = Instantiate(LeftButtonPrefab, new Vector3(-0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
+        leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        leftButton.SetActive(false);
+        upButton = Instantiate(UpButtonPrefab, new Vector3(0, 0.5f, 0), Quaternion.Euler(0, 0, 0));
+        upButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        upButton.SetActive(false);
+
+        //Debug.Log(startImgNames[0]);
+        ImageLoader(startImgNames[3]);
     }
 
-    IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
+    public static void ImageLoader(string imgName)
+    {
+        string imageUrl = Application.dataPath + "/Images/" + imgName + ".JPG";
+        Material material = new Material(shader);
+
+        // Load the image from the specified URL
+        Coroutine coroutine = instance.StartCoroutine(LoadImage(imageUrl, texture =>
+        {
+            // Set the albedo texture property of the material
+            material.SetTexture("_MainTex", texture);
+
+            // Assign the material to a game object or renderer
+            vrImage.GetComponent<Renderer>().material = material;
+            vrImage.name = imgName;
+        }));
+
+        vrImage.transform.rotation = Quaternion.Euler(new Vector3(0, float.Parse(adjList[imgName][4]), 0));
+
+        if (adjList[imgName][0] != "-1")
+        {
+            rightButton.SetActive(true);
+        }
+        else
+        {
+            rightButton.SetActive(false);
+        }
+        if (adjList[imgName][1] != "-1")
+        {
+            downButton.SetActive(true);
+        }
+        else
+        {
+            downButton.SetActive(false);
+        }
+        if (adjList[imgName][2] != "-1")
+        {
+            leftButton.SetActive(true);
+        }
+        else
+        {
+            leftButton.SetActive(false);
+        }
+        if (adjList[imgName][3] != "-1")
+        {
+            upButton.SetActive(true);
+        }
+        else
+        {
+            upButton.SetActive(false);
+        }
+    }
+    public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {
         // Create a new WWW object to load the image from the URL
         WWW www = new WWW(url);
