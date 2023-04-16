@@ -72,18 +72,18 @@ public class VRImageLoader : MonoBehaviour
                 }
             }
         }
-        vrImage = Instantiate(vrImagePrefab, new Vector3(0,0,0), Quaternion.Euler(0, 0, 0));
-        rightButton = Instantiate(RightButtonPrefab, new Vector3(0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-        rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        vrImage = Instantiate(vrImagePrefab);
+        rightButton = Instantiate(RightButtonPrefab);
+        //rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         rightButton.SetActive(false);
-        downButton = Instantiate(DownButtonPrefab, new Vector3(0, -0.5f, 0), Quaternion.Euler(0, 0, 0));
-        downButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        downButton = Instantiate(DownButtonPrefab);
+        //downButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         downButton.SetActive(false);
-        leftButton = Instantiate(LeftButtonPrefab, new Vector3(-0.5f, 0, 0), Quaternion.Euler(0, 0, 0));
-        leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        leftButton = Instantiate(LeftButtonPrefab);
+        //leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         leftButton.SetActive(false);
-        upButton = Instantiate(UpButtonPrefab, new Vector3(0, 0.5f, 0), Quaternion.Euler(0, 0, 0));
-        upButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
+        upButton = Instantiate(UpButtonPrefab);
+        //upButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         upButton.SetActive(false);
 
         //Debug.Log(startImgNames[0]);
