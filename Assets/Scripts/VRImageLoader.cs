@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VRImageLoader : MonoBehaviour
 {
@@ -74,20 +75,17 @@ public class VRImageLoader : MonoBehaviour
         }
         vrImage = Instantiate(vrImagePrefab);
         rightButton = Instantiate(RightButtonPrefab);
-        //rightButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         rightButton.SetActive(false);
         downButton = Instantiate(DownButtonPrefab);
-        //downButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         downButton.SetActive(false);
         leftButton = Instantiate(LeftButtonPrefab);
-        //leftButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         leftButton.SetActive(false);
         upButton = Instantiate(UpButtonPrefab);
-        //upButton.transform.SetParent(canvasObj.GetComponent<Transform>(), false);
         upButton.SetActive(false);
 
-        //Debug.Log(startImgNames[0]);
         ImageLoader(startImgNames[0]);
+        GameObject cur_spot_obj = GameObject.FindGameObjectWithTag("0");
+        cur_spot_obj.GetComponent<Image>().color = Color.red;
     }
 
     public static void ImageLoader(string imgName)
