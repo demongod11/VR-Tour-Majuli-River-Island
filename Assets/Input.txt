@@ -49,3 +49,7 @@ KC (4)-min,KC (3)-min,-1,KC (5)-min,-1,0
 KC (5)-min,KC (4)-min,-1,KC (6)-min,-1,0
 KC (6)-min,KC (5)-min,-1,KC (7)-min,-1,0
 KC (7)-min,KC (6)-min,-1,-1,-1,0
+Bhogpur Satra
+Auniati Satra
+Namoni Jokaibuwa Gaon
+Kamalabari Ghat

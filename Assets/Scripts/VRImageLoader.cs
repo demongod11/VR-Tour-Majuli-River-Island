@@ -87,7 +87,7 @@ public class VRImageLoader : MonoBehaviour
         upButton.SetActive(false);
 
         //Debug.Log(startImgNames[0]);
-        ImageLoader(startImgNames[3]);
+        ImageLoader(startImgNames[0]);
     }
 
     public static void ImageLoader(string imgName)
