@@ -1046,6 +1046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kamalabari Ghat
       objectReference: {fileID: 0}
+    - target: {fileID: 6060673653630468686, guid: af2109b141be00042a4a7b5fefcfaf97,
+        type: 3}
+      propertyPath: m_TagString
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af2109b141be00042a4a7b5fefcfaf97, type: 3}
 --- !u!1 &189451605 stripped
@@ -2049,6 +2054,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bhogpur
       objectReference: {fileID: 0}
+    - target: {fileID: 6060673653630468686, guid: af2109b141be00042a4a7b5fefcfaf97,
+        type: 3}
+      propertyPath: m_TagString
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af2109b141be00042a4a7b5fefcfaf97, type: 3}
 --- !u!1 &963194225
@@ -2431,6 +2441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Namoni
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060673653630468686, guid: af2109b141be00042a4a7b5fefcfaf97,
+        type: 3}
+      propertyPath: m_TagString
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af2109b141be00042a4a7b5fefcfaf97, type: 3}
@@ -2909,6 +2924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Auniati
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060673653630468686, guid: af2109b141be00042a4a7b5fefcfaf97,
+        type: 3}
+      propertyPath: m_TagString
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af2109b141be00042a4a7b5fefcfaf97, type: 3}
