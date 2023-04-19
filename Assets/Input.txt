@@ -50,7 +50,9 @@ KC (5)-min,KC (4)-min,-1,KC (6)-min,-1,0
 KC (6)-min,KC (5)-min,-1,KC (7)-min,-1,0
 KC (7)-min,KC (6)-min,-1,-1,-1,0
 Bhogpur Satra
+KCN1 (7)-min,KCN1 (6)-min,-1,-1,-1,0
 Auniati Satra
+KCN2 (7)-min,KCN2 (6)-min,-1,-1,-1,0
 Namoni Jokaibuwa Gaon
 R0010588-min,R0010587-min,-1,-1,-1,0
 R0010587-min,R0010586-min,-1,R0010588-min,-1,0
@@ -73,3 +75,4 @@ R0010595-min,R0010593-min,-1,R0010596-min,-1,0
 R0010596-min,R0010595-min,-1,-1,R0010597-min,0
 R0010597-min,-1,R0010596-min,-1,-1,0
 Kamalabari Ghat
+KCN3 (7)-min,KCN3 (6)-min,-1,-1,-1,0
