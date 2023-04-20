@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         if (rightImgName != "-1")
         {
             VRImageLoader.ImageLoader(rightImgName);
-            miniMap("some","someother");
+            miniMap(imgName,rightImgName);
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         if (downImgName != "-1")
         {
             VRImageLoader.ImageLoader(downImgName);
-            miniMap("some","someother");
+            miniMap(imgName,downImgName);
         }
     }
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         if (leftImgName != "-1")
         {
             VRImageLoader.ImageLoader(leftImgName);
-            miniMap("some","someother");
+            miniMap(imgName,leftImgName);
         }
     }
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (upImgName != "-1")
         {
             VRImageLoader.ImageLoader(upImgName);
-            miniMap("some","someother");
+            miniMap(imgName,upImgName);
         }
     }
 

@@ -62,6 +62,29 @@ public class VRImageLoader : MonoBehaviour
                     {
                         value.Add(values[i].Trim());
                     }
+                    // float skew = float.Parse(values[5].Trim());
+                    // if((skew <= 45.0f &&  skew >= 0f) || (skew <= 0f &&  skew >= -45.0f) || (skew <= 360f &&  skew >= 315.0f)){
+                    //     value.Add(values[1].Trim());
+                    //     value.Add(values[2].Trim());
+                    //     value.Add(values[3].Trim());
+                    //     value.Add(values[4].Trim());
+                    // }else if(skew <= 135.0f &&  skew >= 45.0f){
+                    //     value.Add(values[2].Trim());
+                    //     value.Add(values[3].Trim());
+                    //     value.Add(values[4].Trim());
+                    //     value.Add(values[1].Trim());
+                    // }else if(skew <= 225.0f &&  skew >= 135.0f){
+                    //     value.Add(values[3].Trim());
+                    //     value.Add(values[4].Trim());
+                    //     value.Add(values[1].Trim());
+                    //     value.Add(values[2].Trim());
+                    // }else{
+                    //     value.Add(values[4].Trim());
+                    //     value.Add(values[1].Trim());
+                    //     value.Add(values[2].Trim());
+                    //     value.Add(values[3].Trim());
+                    // }
+                    // value.Add(values[5].Trim());
                     value.Add(cnt.ToString());
 
                     if(sec_flag == 1)

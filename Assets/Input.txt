@@ -12,67 +12,153 @@ Jugundhari Road
 R674,R675,-1,-1,-1,0
 R675,-1,-1,R674,-1,0
 Kamalabari Town
-KC (1)-min,KC (25)-min,KC (18)-min,KC (2)-min,KC (8)-min,0
-KC (25)-min,KC (26)-min,-1,KC (1)-min,-1,0
-KC (26)-min,KC (27)-min,-1,KC (25)-min,-1,0
-KC (27)-min,KC (28)-min,-1,KC (26)-min,-1,0
-KC (28)-min,KC (29)-min,-1,KC (27)-min,-1,0
-KC (29)-min,KC (30)-min,-1,KC (28)-min,-1,0
-KC (30)-min,KC (31)-min,-1,KC (29)-min,-1,0
-KC (31)-min,KC (32)-min,-1,KC (30)-min,-1,0
-KC (32)-min,KC (33)-min,-1,KC (31)-min,-1,0
-KC (33)-min,KC (34)-min,-1,KC (32)-min,-1,0
-KC (34)-min,KC (35)-min,-1,KC (33)-min,-1,0
-KC (35)-min,KC (36)-min,-1,KC (34)-min,-1,0
-KC (36)-min,KC (37)-min,-1,KC (35)-min,-1,0
-KC (37)-min,-1,-1,KC (36)-min,-1,0
-KC (8)-min,-1,KC (1)-min,-1,KC (9)-min,0
-KC (9)-min,-1,KC (8)-min,-1,KC (10)-min,0
-KC (10)-min,-1,KC (9)-min,-1,KC (11)-min,0
-KC (11)-min,-1,KC (10)-min,-1,KC (12)-min,0
-KC (12)-min,-1,KC (11)-min,-1,KC (13)-min,0
-KC (13)-min,-1,KC (12)-min,-1,KC (14)-min,0
-KC (14)-min,-1,KC (13)-min,-1,KC (15)-min,0
+KC (25)-min,KC (26)-min,-1,KC (1)-min,-1,-70
+KC (26)-min,KC (27)-min,-1,KC (25)-min,-1,-90
+KC (27)-min,KC (28)-min,-1,KC (26)-min,-1,-90
+KC (28)-min,KC (29)-min,-1,KC (27)-min,-1,-100
+KC (29)-min,KC (30)-min,-1,KC (28)-min,-1,-90
+KC (30)-min,KC (31)-min,-1,KC (29)-min,-1,110
+KC (31)-min,KC (32)-min,-1,KC (30)-min,-1,-90
+KC (32)-min,KC (33)-min,-1,KC (31)-min,-1,-93
+KC (33)-min,KC (34)-min,-1,KC (32)-min,-1,95
+KC (34)-min,KC (35)-min,-1,KC (33)-min,-1,100
+KC (35)-min,KC (36)-min,-1,KC (34)-min,-1,40
+KC (37)-min,-1,-1,KC (36)-min,-1,9
+KC (36)-min,KC (37)-min,-1,KC (35)-min,-1,20
+KC (18)-min,-1,KC (19)-min,-1,KC (1)-min,185
+KC (19)-min,-1,KC (20)-min,-1,KC (18)-min,10
+KC (20)-min,-1,KC (21)-min,-1,KC (19)-min,-5.5
+KC (21)-min,-1,KC (22)-min,-1,KC (20)-min,190
+KC (22)-min,-1,KC (23)-min,-1,KC (21)-min,180
+KC (23)-min,-1,KC (24)-min,-1,KC (22)-min,180
+KC (24)-min,-1,-1,-1,KC (23)-min,-170
+KC (8)-min,-1,KC (1)-min,-1,KC (9)-min,20
+KC (9)-min,-1,KC (8)-min,-1,KC (10)-min,90
+KC (10)-min,-1,KC (9)-min,-1,KC (11)-min,60
+KC (11)-min,-1,KC (10)-min,-1,KC (12)-min,10
+KC (12)-min,-1,KC (11)-min,-1,KC (13)-min,-25
+KC (13)-min,-1,KC (12)-min,-1,KC (14)-min,100
+KC (14)-min,-1,KC (13)-min,-1,KC (15)-min,203
 KC (15)-min,-1,KC (14)-min,-1,KC (16)-min,0
-KC (16)-min,-1,KC (15)-min,-1,KC (17)-min,0
-KC (17)-min,-1,KC (16)-min,-1,-1,0
-KC (18)-min,-1,KC (19)-min,-1,KC (1)-min,0
-KC (19)-min,-1,KC (20)-min,-1,KC (18)-min,0
-KC (20)-min,-1,KC (21)-min,-1,KC (19)-min,0
-KC (21)-min,-1,KC (22)-min,-1,KC (20)-min,0
-KC (22)-min,-1,KC (23)-min,-1,KC (21)-min,0
-KC (23)-min,-1,KC (24)-min,-1,KC (22)-min,0
-KC (24)-min,-1,-1,-1,KC (23)-min,0
-KC (2)-min,KC (1)-min,-1,KC (3)-min,-1,0
-KC (3)-min,KC (2)-min,-1,KC (4)-min,-1,0
+KC (16)-min,-1,KC (15)-min,-1,KC (17)-min,180
+KC (17)-min,-1,KC (16)-min,-1,-1,180
+KC (7)-min,KC (6)-min,-1,-1,-1,120
+KC (2)-min,KC (1)-min,-1,KC (3)-min,-1,90
+KC (3)-min,KC (2)-min,-1,KC (4)-min,-1,90
 KC (4)-min,KC (3)-min,-1,KC (5)-min,-1,0
-KC (5)-min,KC (4)-min,-1,KC (6)-min,-1,0
-KC (6)-min,KC (5)-min,-1,KC (7)-min,-1,0
-KC (7)-min,KC (6)-min,-1,-1,-1,0
+KC (5)-min,KC (4)-min,-1,KC (6)-min,-1,-90
+KC (6)-min,KC (5)-min,-1,KC (7)-min,-1,90
+KC (1)-min,KC (25)-min,KC (18)-min,KC (2)-min,KC (8)-min,0
 Bhogpur Satra
-KCN1 (7)-min,KCN1 (6)-min,-1,-1,-1,0
+BH2,-1,-1,-1,BH1,90
+BH1,-1,BH2,-1,BH3,90
+BH3,-1,BH1,-1,BH4,90
+BH4,-1,BH3,-1,BH5,90
+BH5,-1,BH4,-1,BH6,90
+BH6,-1,BH5,-1,BH7,90
+BH7,-1,BH6,-1,BH8,60
+BH8,-1,BH7,-1,R0010425,90
+R0010425,R0010426,BH8,-1,R0010424,90
+R0010426,R0010425,-1,-1,-1,250
+R0010424,-1,R0010425,-1,R0010423,90
+R0010423,-1,R0010424,-1,R0010422,90
+R0010422,-1,R0010420,-1,R0010423,90
+R0010420,-1,R0010422,-1,R0010419,90
+R0010419,R0010420,-1,BH9,-1,90
+BH9,-1,-1,R0010419,BH10,90
+BH10,R0010414,BH9,-1,BH11,90
+R0010414,R0010413,-1,-1,BH10,0
+BH11,BH13,BH10,BH12,BH14,90
+BH12,-1,-1,BH11,-1,270
+BH13,BH11,-1,-1,-1,270
+BH14,-1,BH11,-1,BH15,90
+BH15,-1,BH14,-1,BH16,90
+BH16,-1,BH15,-1,BH17,90
+R0010413,-1,R0010414,-1,R0010412,270
+R0010412,-1,R0010413,-1,R0010411,180
+R0010411,-1,R0010412,-1,-1,270
+BH17,-1,BH16,-1,BH18,90
+BH18,-1,BH17,BH20,BH19,90
+BH19,-1,BH18,BH21,-1,90
+BH20,-1,BH21,BH18,-1,0
+BH21,R0010409,-1,BH19,BH20,0
+R0010409,-1,R0010410,-1,BH21,0
+R0010410,-1,-1,-1,R0010409,0
 Auniati Satra
-KCN2 (7)-min,KCN2 (6)-min,-1,-1,-1,0
+A1-min,-1,-1,-1,A2-min,90
+A2-min,-1,A1-min,-1,A3-min,90
+A3-min,-1,A2-min,-1,A4-min,90
+A4-min,-1,A3-min,-1,A5-min,90
+A5-min,-1,A4-min,-1,A6-min,90
+A6-min,-1,A5-min,-1,A7-min,90
+A7-min,-1,A6-min,-1,A8-min,90
+A8-min,-1,A7-min,-1,A9-min,90
+A9-min,-1,A8-min,-1,A11-min,90
+A11-min,A10-min,A12-min,-1,A9-min,90
+A12-min,-1,A11-min,-1,A13-min,270
+A13-min,-1,A14-min,A15-min,A12-min,270
+A14-min,-1,A13-min,-1,-1,90
+A15-min,A13-min,-1,A34-min,-1,0
+A34-min,A15-min,-1,A35-min,-1,0
+A35-min,A34-min,-1,A36-min,-1,0
+A36-min,A35-min,-1,-1,-1,180
+A10-min,-1,A11-min,-1,A10.1-min,90
+A10.1-min,-1,A10-min,-1,A10.2-min,90
+A10.2-min,A38-min,A10.1-min,A47-min,A10.3-min,90
+A38-min,-1,-1,A10.2-min,A39-min,90
+A47-min,-1,-1,A10.2-min,-1,315
+A16-min,-1,-1,A17-min,A18-min,345
+A17-min,A19-min,A16-min,-1,A20-min,270
+A18-min,A16-min,-1,-1,-1,0
+A19-min,A17-min,-1,-1,-1,0
+A20-min,-1,A17-min,-1,A21-min,0
+A21-min,-1,A20-min,-1,A22-min,0
+A22-min,A33-min,A21-min,A42-min,A23-min,0
+A23-min,-1,A22-min,-1,A24-min,180
+A24-min,-1,A23-min,-1,A25-min,160
+A25-min,-1,A24-min,-1,-1,300
+A33-min,A22-min,-1,A32-min,-1,180
+A32-min,A33-min,-1,-1,-1,180
+A10.3-min,-1,A10.2-min,-1,A10.4-min,270
+A10.4-min,-1,A10.3-min,-1,A10.5-min,270
+A10.5-min,-1,A10.4-min,-1,A10.6-min,270
+A10.6-min,-1,A10.5-min,-1,A10.7-min,90
+A10.7-min,-1,A10.6-min,-1,A10.8-min,180
+A10.8-min,-1,A10.7-min,-1,A10.9-min,270
+A10.9-min,-1,A10.8-min,A42-min,10.10-min,270
+10.10-min,-1,A10.9-min,A43-min,A10.11-min,90
+A10.11-min,A10.12-min,10.10-min,A10.13-min,-1,90
+A10.12-min,A10.11-min,-1,A43-min,-1,270
+A10.13-min,A45-min,-1,A10.11-min,-1,0
+A45-min,-1,-1,A10.13-min,-1,0
+A46-min,-1,-1,A10.7-min,-1,0
+A42-min,A10.8-min,A43-min,A22-min,A41-min,270
+A41-min,-1,A40-min,-1,A42-min,90
+A40-min,-1,A39-min,-1,A41-min,90
+A43-min,A10.12-min,A44-min,-1,A42-min,270
+A44-min,-1,A43-min,-1,-1,290
+A39-min,-1,A38-min,-1,A40-min,90
+KCN1 (7)-min,KCN1 (6)-min,-1,-1,-1,0
 Namoni Jokaibuwa Gaon
-R0010588-min,R0010587-min,-1,-1,-1,0
-R0010587-min,R0010586-min,-1,R0010588-min,-1,0
+R0010593-min,R0010595-min,R0010592-min,R0010594-min,-1,0
+R0010589-min,R0010590-min,-1,R0010577-min,R0010584-min,114
+R0010583-min,-1,R0010584-min,-1,R0010578-min,180
+R0010579-min,R0010578-min,-1,-1,-1,-60
+R0010584-min,-1,R0010589-min,-1,R0010583-min,70
+R0010596-min,R0010595-min,R0010582-min,-1,R0010597-min,0
+R0010581-min,-1,-1,R0010578-min,-1,180
+R0010582-min,-1,R0010581-min,-1,-1,180
+R0010578-min,R0010583-min,-1,R0010579-min,-1,-90
+R0010588-min,R0010587-min,-1,-1,-1,103
+R0010590-min,-1,-1,R0010589-min,R0010591-min,90
+R0010591-min,-1,R0010590-min,-1,R0010592-min,90
+R0010592-min,-1,R0010591-min,-1,R0010593-min,90
+R0010597-min,-1,R0010596-min,-1,-1,180
+R0010595-min,R0010593-min,-1,R0010596-min,-1,0
+R0010594-min,-1,-1,R0010593-min,-1,170
+R0010587-min,R0010586-min,-1,R0010588-min,-1,98
 R0010586-min,R0010585-min,-1,R0010587-min,-1,0
 R0010585-min,R0010577-min,-1,R0010586-min,-1,0
 R0010577-min,R0010589-min,-1,R0010585-min,R0010578-min,0
-R0010589-min,R0010590-min,-1,R0010577-min,R0010584-min,0
-R0010584-min,-1,R0010589-min,-1,R0010583-min,0
-R0010583-min,-1,R0010584-min,-1,R0010581-min,0
-R0010581-min,-1,R0010583-min,R0010578-min,R0010582-min,0
-R0010582-min,-1,R0010581-min,-1,-1,0
-R0010578-min,R0010581-min,-1,R0010579-min,-1,0
-R0010579-min,R0010578-min,-1,-1,-1,0
-R0010590-min,-1,-1,R0010589-min,R0010591-min,0
-R0010591-min,-1,R0010590-min,-1,R0010592-min,0
-R0010592-min,-1,R0010591-min,-1,R0010593-min,0
-R0010593-min,R0010594-min,R0010592-min,R0010595-min,-1,0
-R0010594-min,-1,-1,R0010593-min,-1,0
-R0010595-min,R0010593-min,-1,R0010596-min,-1,0
-R0010596-min,R0010595-min,-1,-1,R0010597-min,0
-R0010597-min,-1,R0010596-min,-1,-1,0
 Kamalabari Ghat
 KCN3 (7)-min,KCN3 (6)-min,-1,-1,-1,0
