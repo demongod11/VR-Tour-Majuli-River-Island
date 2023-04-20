@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
         if (rightImgName != "-1")
         {
             VRImageLoader.ImageLoader(rightImgName);
+            miniMap("some","someother");
         }
     }
 
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
         if (downImgName != "-1")
         {
             VRImageLoader.ImageLoader(downImgName);
+            miniMap("some","someother");
         }
     }
 
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         if (leftImgName != "-1")
         {
             VRImageLoader.ImageLoader(leftImgName);
+            miniMap("some","someother");
         }
     }
 
@@ -48,6 +52,14 @@ public class PlayerController : MonoBehaviour
         if (upImgName != "-1")
         {
             VRImageLoader.ImageLoader(upImgName);
+            miniMap("some","someother");
         }
+    }
+
+    public void miniMap(string str1, string str2){
+        GameObject curPin = GameObject.Find(str1);
+        GameObject nxtPin = GameObject.Find(str2);
+        curPin.GetComponent<Image>().color = Color.white;
+        nxtPin.GetComponent<Image>().color = Color.red;
     }
 }
