@@ -1,0 +1,62 @@
+{
+    "name": "inputsystem",
+    "maps": [
+        {
+            "name": "Map",
+            "id": "5b407fef-85f0-4d98-846e-32db66d343f7",
+            "actions": [
+                {
+                    "name": "triggermap",
+                    "type": "Button",
+                    "id": "41593f11-0313-4fcd-86f9-703321d0c330",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ed1e5068-62da-4092-a366-b10abf7846a0",
+                    "path": "<HID::ೀ弿Ǘ 9999>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "triggermap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Gvrclick1",
+            "id": "90b71d91-1590-4dab-97d6-ad049e487bf4",
+            "actions": [
+                {
+                    "name": "gvrbuttonclick",
+                    "type": "Button",
+                    "id": "29e3b657-723b-4eab-9d04-d9c883dbebda",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2eb07cc0-59fb-43a7-8f08-0781069b6dd8",
+                    "path": "<HID::ೀ弿Ǘ 9999>/button4",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "gvrbuttonclick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
