@@ -62,29 +62,7 @@ public class VRImageLoader : MonoBehaviour
                     {
                         value.Add(values[i].Trim());
                     }
-                    // float skew = float.Parse(values[5].Trim());
-                    // if((skew <= 45.0f &&  skew >= 0f) || (skew <= 0f &&  skew >= -45.0f) || (skew <= 360f &&  skew >= 315.0f)){
-                    //     value.Add(values[1].Trim());
-                    //     value.Add(values[2].Trim());
-                    //     value.Add(values[3].Trim());
-                    //     value.Add(values[4].Trim());
-                    // }else if(skew <= 135.0f &&  skew >= 45.0f){
-                    //     value.Add(values[2].Trim());
-                    //     value.Add(values[3].Trim());
-                    //     value.Add(values[4].Trim());
-                    //     value.Add(values[1].Trim());
-                    // }else if(skew <= 225.0f &&  skew >= 135.0f){
-                    //     value.Add(values[3].Trim());
-                    //     value.Add(values[4].Trim());
-                    //     value.Add(values[1].Trim());
-                    //     value.Add(values[2].Trim());
-                    // }else{
-                    //     value.Add(values[4].Trim());
-                    //     value.Add(values[1].Trim());
-                    //     value.Add(values[2].Trim());
-                    //     value.Add(values[3].Trim());
-                    // }
-                    // value.Add(values[5].Trim());
+
                     value.Add(cnt.ToString());
 
                     if(sec_flag == 1)
@@ -125,42 +103,44 @@ public class VRImageLoader : MonoBehaviour
             // Assign the material to a game object or renderer
             vrImage.GetComponent<Renderer>().material = material;
             vrImage.name = imgName;
+            vrImage.transform.rotation = Quaternion.Euler(new Vector3(0, float.Parse(adjList[imgName][4]), 0));
+            if (adjList[imgName][0] != "-1")
+            {
+                rightButton.SetActive(true);
+            }
+            else
+            {
+                RightController.active = false;
+                rightButton.SetActive(false);
+            }
+            if (adjList[imgName][1] != "-1")
+            {
+                downButton.SetActive(true);
+            }
+            else
+            {
+                DownController.active = false;
+                downButton.SetActive(false);
+            }
+            if (adjList[imgName][2] != "-1")
+            {
+                leftButton.SetActive(true);
+            }
+            else
+            {
+                LeftController.active = false;
+                leftButton.SetActive(false);
+            }
+            if (adjList[imgName][3] != "-1")
+            {
+                upButton.SetActive(true);
+            }
+            else
+            {
+                UpController.active = false;
+                upButton.SetActive(false);
+            }
         }));
-
-        vrImage.transform.rotation = Quaternion.Euler(new Vector3(0, float.Parse(adjList[imgName][4]), 0));
-
-        if (adjList[imgName][0] != "-1")
-        {
-            rightButton.SetActive(true);
-        }
-        else
-        {
-            rightButton.SetActive(false);
-        }
-        if (adjList[imgName][1] != "-1")
-        {
-            downButton.SetActive(true);
-        }
-        else
-        {
-            downButton.SetActive(false);
-        }
-        if (adjList[imgName][2] != "-1")
-        {
-            leftButton.SetActive(true);
-        }
-        else
-        {
-            leftButton.SetActive(false);
-        }
-        if (adjList[imgName][3] != "-1")
-        {
-            upButton.SetActive(true);
-        }
-        else
-        {
-            upButton.SetActive(false);
-        }
     }
     public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {

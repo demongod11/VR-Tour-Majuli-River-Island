@@ -16,6 +16,10 @@ TagManager:
   - 6
   - 7
   - map button
+  - Right Button
+  - Left Button
+  - Up Button
+  - Down Button
   layers:
   - Default
   - TransparentFX

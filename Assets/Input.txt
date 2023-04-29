@@ -12,6 +12,7 @@ Jugundhari Road
 R674,R675,-1,-1,-1,0
 R675,-1,-1,R674,-1,0
 Kamalabari Town
+KC (1)-min,KC (25)-min,KC (18)-min,KC (2)-min,KC (8)-min,0
 KC (25)-min,KC (26)-min,-1,KC (1)-min,-1,-70
 KC (26)-min,KC (27)-min,-1,KC (25)-min,-1,-90
 KC (27)-min,KC (28)-min,-1,KC (26)-min,-1,-90
@@ -48,7 +49,6 @@ KC (3)-min,KC (2)-min,-1,KC (4)-min,-1,90
 KC (4)-min,KC (3)-min,-1,KC (5)-min,-1,0
 KC (5)-min,KC (4)-min,-1,KC (6)-min,-1,-90
 KC (6)-min,KC (5)-min,-1,KC (7)-min,-1,90
-KC (1)-min,KC (25)-min,KC (18)-min,KC (2)-min,KC (8)-min,0
 Bhogpur Satra
 BH2,-1,-1,-1,BH1,90
 BH1,-1,BH2,-1,BH3,90
@@ -146,7 +146,6 @@ R0010590-min,-1,-1,R0010589-min,R0010591-min,90
 R0010593-min,R0010595-min,R0010592-min,R0010594-min,-1,20
 R0010583-min,-1,R0010584-min,-1,R0010578-min,180
 R0010579-min,R0010578-min,-1,-1,-1,-60
-
 R0010596-min,R0010595-min,R0010582-min,-1,R0010597-min,0
 R0010581-min,-1,-1,R0010578-min,-1,180
 R0010582-min,-1,R0010581-min,-1,-1,180
