@@ -12,7 +12,8 @@ public class VRImageLoader : MonoBehaviour
     public static Dictionary<string, List<string>> adjList;
     public static List<string> startImgNames;
     GameObject canvasObj;
-
+    public AudioClip[] audioClips;
+    public AudioSource myAudioSource;
     private static VRImageLoader instance;
     void Awake()
     {
@@ -62,30 +63,9 @@ public class VRImageLoader : MonoBehaviour
                     {
                         value.Add(values[i].Trim());
                     }
-                    // float skew = float.Parse(values[5].Trim());
-                    // if((skew <= 45.0f &&  skew >= 0f) || (skew <= 0f &&  skew >= -45.0f) || (skew <= 360f &&  skew >= 315.0f)){
-                    //     value.Add(values[1].Trim());
-                    //     value.Add(values[2].Trim());
-                    //     value.Add(values[3].Trim());
-                    //     value.Add(values[4].Trim());
-                    // }else if(skew <= 135.0f &&  skew >= 45.0f){
-                    //     value.Add(values[2].Trim());
-                    //     value.Add(values[3].Trim());
-                    //     value.Add(values[4].Trim());
-                    //     value.Add(values[1].Trim());
-                    // }else if(skew <= 225.0f &&  skew >= 135.0f){
-                    //     value.Add(values[3].Trim());
-                    //     value.Add(values[4].Trim());
-                    //     value.Add(values[1].Trim());
-                    //     value.Add(values[2].Trim());
-                    // }else{
-                    //     value.Add(values[4].Trim());
-                    //     value.Add(values[1].Trim());
-                    //     value.Add(values[2].Trim());
-                    //     value.Add(values[3].Trim());
-                    // }
-                    // value.Add(values[5].Trim());
+                
                     value.Add(cnt.ToString());
+                    value.Add(values[6].Trim());
 
                     if(sec_flag == 1)
                     {
@@ -95,6 +75,8 @@ public class VRImageLoader : MonoBehaviour
                     adjList.Add(imageName, value);
                 }
             }
+            audioClips = Resources.LoadAll<AudioClip>("AudioClips");
+            myAudioSource = GetComponent<AudioSource>();
         }
         vrImage = Instantiate(vrImagePrefab);
         rightButton = Instantiate(RightButtonPrefab);
@@ -111,6 +93,7 @@ public class VRImageLoader : MonoBehaviour
         cur_spot_obj.GetComponent<Image>().color = Color.red;
     }
 
+
     public static void ImageLoader(string imgName)
     {
         string imageUrl = Application.dataPath + "/Images/" + imgName + ".JPG";
@@ -126,6 +109,21 @@ public class VRImageLoader : MonoBehaviour
             vrImage.GetComponent<Renderer>().material = material;
             vrImage.name = imgName;
         }));
+
+    
+        if(adjList[imgName][6]!="-1")
+        {
+            int myInt = int.Parse(adjList[imgName][6]);
+            VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
+            imageLoader1.myAudioSource.loop=true;
+            imageLoader1.myAudioSource.clip=imageLoader1.audioClips[myInt-1];
+            imageLoader1.myAudioSource.Play();
+        }
+        else
+        {
+            VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
+            imageLoader1.myAudioSource.clip=null;
+        }
 
         vrImage.transform.rotation = Quaternion.Euler(new Vector3(0, float.Parse(adjList[imgName][4]), 0));
 
@@ -161,6 +159,8 @@ public class VRImageLoader : MonoBehaviour
         {
             upButton.SetActive(false);
         }
+        
+
     }
     public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {

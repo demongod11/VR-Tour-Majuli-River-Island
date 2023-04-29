@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Teleportation : MonoBehaviour
 {
+    public static Button auniatibutton;
+
     public GameObject maxiMap; //closeButton, mapButton;
     List<string> startImgNames;
 

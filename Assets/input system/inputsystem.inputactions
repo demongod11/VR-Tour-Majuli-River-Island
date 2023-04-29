@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "buttonClick",
+                    "type": "Button",
+                    "id": "41028a92-2c31-47bd-8073-26f038656a5b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -26,17 +35,28 @@
                     "action": "triggermap",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82efc214-2131-4d15-9068-30166d4e6107",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "buttonClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
             "name": "Gvrclick1",
-            "id": "90b71d91-1590-4dab-97d6-ad049e487bf4",
+            "id": "bd8a6de6-abce-45d8-8a76-efd97f9bd4fd",
             "actions": [
                 {
                     "name": "gvrbuttonclick",
                     "type": "Button",
-                    "id": "29e3b657-723b-4eab-9d04-d9c883dbebda",
+                    "id": "5c2a156b-48d9-4a49-8ffd-3581d3e50dbf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -46,9 +66,9 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "2eb07cc0-59fb-43a7-8f08-0781069b6dd8",
-                    "path": "<HID::ೀ弿Ǘ 9999>/button4",
-                    "interactions": "Tap",
+                    "id": "a123fbf9-de0e-4d48-8839-de1c1ecf3b94",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "gvrbuttonclick",
