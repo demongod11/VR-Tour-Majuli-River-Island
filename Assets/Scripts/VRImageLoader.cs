@@ -12,7 +12,8 @@ public class VRImageLoader : MonoBehaviour
     public static Dictionary<string, List<string>> adjList;
     public static List<string> startImgNames;
     GameObject canvasObj;
-
+    public AudioClip[] audioClips;
+    public AudioSource myAudioSource;
     private static VRImageLoader instance;
     void Awake()
     {
@@ -62,8 +63,9 @@ public class VRImageLoader : MonoBehaviour
                     {
                         value.Add(values[i].Trim());
                     }
-
+                
                     value.Add(cnt.ToString());
+                    value.Add(values[6].Trim());
 
                     if(sec_flag == 1)
                     {
@@ -73,6 +75,8 @@ public class VRImageLoader : MonoBehaviour
                     adjList.Add(imageName, value);
                 }
             }
+            audioClips = Resources.LoadAll<AudioClip>("AudioClips");
+            myAudioSource = GetComponent<AudioSource>();
         }
         vrImage = Instantiate(vrImagePrefab);
         rightButton = Instantiate(RightButtonPrefab);
@@ -88,6 +92,7 @@ public class VRImageLoader : MonoBehaviour
         GameObject cur_spot_obj = GameObject.FindGameObjectWithTag("0");
         cur_spot_obj.GetComponent<Image>().color = Color.red;
     }
+
 
     public static void ImageLoader(string imgName)
     {
@@ -140,8 +145,23 @@ public class VRImageLoader : MonoBehaviour
                 UpController.active = false;
                 upButton.SetActive(false);
             }
+
+            if(adjList[imgName][6]!="-1")
+            {
+                int myInt = int.Parse(adjList[imgName][6]);
+                VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
+                imageLoader1.myAudioSource.loop=true;
+                imageLoader1.myAudioSource.clip=imageLoader1.audioClips[myInt-1];
+                imageLoader1.myAudioSource.Play();
+            }
+            else
+            {
+                VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
+                imageLoader1.myAudioSource.clip=null;
+            }
         }));
     }
+
     public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {
         // Create a new WWW object to load the image from the URL
