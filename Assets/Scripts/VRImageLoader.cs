@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 
 public class VRImageLoader : MonoBehaviour
@@ -22,6 +23,7 @@ public class VRImageLoader : MonoBehaviour
     void Start()
     {
         shader = Shader.Find("Unlit/Texture");
+        //shader = Shader.Find("Skybox/Cubemap");
         canvasObj = GameObject.FindWithTag("canvas");
         adjList = new Dictionary<string, List<string>>();
         startImgNames = new List<string>();
@@ -80,7 +82,7 @@ public class VRImageLoader : MonoBehaviour
         }
         vrImage = Instantiate(vrImagePrefab);
         rightButton = Instantiate(RightButtonPrefab);
-        rightButton.SetActive(false);
+        rightButton.SetActive(true);
         downButton = Instantiate(DownButtonPrefab);
         downButton.SetActive(false);
         leftButton = Instantiate(LeftButtonPrefab);
@@ -88,17 +90,32 @@ public class VRImageLoader : MonoBehaviour
         upButton = Instantiate(UpButtonPrefab);
         upButton.SetActive(false);
 
-        ImageLoader(startImgNames[0]);
         GameObject cur_spot_obj = GameObject.FindGameObjectWithTag("0");
         cur_spot_obj.GetComponent<Image>().color = Color.red;
+        ImageLoader(startImgNames[0]);
+
     }
 
 
     public static void ImageLoader(string imgName)
     {
-        string imageUrl = Application.dataPath + "/Images/" + imgName + ".JPG";
-        Material material = new Material(shader);
+        //Texture texture = Resources.Load<Texture>("Images/"+imgName);
 
+        //Material material = new Material(Shader.Find("Skybox/Cubemap"));
+        //material.SetTexture("_Tex", texture);
+        //AssetDatabase.CreateAsset(material, "Assets/Resources/Materials/" + texture.name + ".mat");
+        //AssetDatabase.SaveAssets();
+        //Material skyboxMaterial = RenderSettings.skybox;
+        //skyboxMaterial = Resources.Load<Material>("Materials/" + imgName);
+        //skyboxMaterial = material;
+        //RenderSettings.skybox = skyboxMaterial;
+        //vrImage.GetComponent<Renderer>().material = skyboxMaterial;
+        //vrImage.name = imgName;
+        //skyboxMaterial.SetFloat("_Rotation", float.Parse(adjList[imgName][4]));
+        //string imageUrl = Application.dataPath + "/Resources/Images/" + imgName + ".JPG";
+        string imageUrl = "Images/" + imgName;
+        Material material = new Material(shader);
+        //Material skyBoxMaterial = RenderSettings.skybox;
         // Load the image from the specified URL
         Coroutine coroutine = instance.StartCoroutine(LoadImage(imageUrl, texture =>
         {
@@ -146,35 +163,42 @@ public class VRImageLoader : MonoBehaviour
                 upButton.SetActive(false);
             }
 
-            if(adjList[imgName][6]!="-1")
+            if (adjList[imgName][6] != "-1")
             {
                 int myInt = int.Parse(adjList[imgName][6]);
                 VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
-                imageLoader1.myAudioSource.loop=true;
-                imageLoader1.myAudioSource.clip=imageLoader1.audioClips[myInt-1];
+                imageLoader1.myAudioSource.loop = true;
+                imageLoader1.myAudioSource.clip = imageLoader1.audioClips[myInt - 1];
                 imageLoader1.myAudioSource.Play();
             }
             else
             {
                 VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
-                imageLoader1.myAudioSource.clip=null;
+                imageLoader1.myAudioSource.clip = null;
             }
         }));
     }
 
     public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {
-        // Create a new WWW object to load the image from the URL
-        WWW www = new WWW(url);
+        //// Create a new WWW object to load the image from the URL
+        //WWW www = new WWW(url);
 
-        // Wait for the download to complete
-        yield return www;
+        //// Wait for the download to complete
+        //yield return www;
 
-        // Create a new texture using the downloaded data
-        Texture2D texture = new Texture2D(2, 2);
-        texture.LoadImage(www.bytes);
+        //// Create a new texture using the downloaded data
+        //Texture2D texture = new Texture2D(2, 2);
+        //texture.LoadImage(www.bytes);
+
+        //// Invoke the callback with the loaded texture
+        //callback(texture);
+        // Load the image from the Resources folder
+        Texture2D texture = Resources.Load<Texture2D>(url);
 
         // Invoke the callback with the loaded texture
         callback(texture);
+
+        yield return null;
     }
 }
