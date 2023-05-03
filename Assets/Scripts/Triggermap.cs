@@ -4,21 +4,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 public class Triggermap : MonoBehaviour
-{
-    
+{ 
     public GameObject mapobj;
-
-    public void OnTriggerMap()
+    private Camera cam;
+    private void Start()
     {
-        if(!mapobj.activeSelf)
+        cam = Camera.main;
+    }
+    public void OnTriggerMap(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
-            mapobj.SetActive(true);
+            if (!mapobj.activeSelf)
+            {
+                float distance = 1f;
+                Quaternion rotation = cam.transform.rotation;
+                Matrix4x4 rotationMatrix = Matrix4x4.Rotate(rotation);
+                Vector3 localForward = rotationMatrix.MultiplyVector(Vector3.forward);
+                Vector3 position = localForward * distance;
+                gameObject.transform.position = position;
+                transform.rotation = cam.transform.rotation;
+                mapobj.SetActive(true);
+            }
+            else if (mapobj.activeSelf)
+            {
+                mapobj.SetActive(false);
+            }
         }
-        else if(mapobj.activeSelf)
-        {
-            mapobj.SetActive(false);
-        }
-        Debug.Log("button pressed");
-        
     }
 }

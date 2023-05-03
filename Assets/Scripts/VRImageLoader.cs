@@ -165,6 +165,7 @@ public class VRImageLoader : MonoBehaviour
         }));
     }
 
+
     public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
     {
         // Load the image from the Resources folder
@@ -175,4 +176,124 @@ public class VRImageLoader : MonoBehaviour
 
         yield return null;
         }
+        // public static void ImageLoader(string imgName, float fadeTime)
+        // {
+        //     string imageUrl = "Images/" + imgName;
+        //     Material material = new Material(shader);
+
+        //     // Load the image from the specified URL
+        //     Coroutine coroutine = instance.StartCoroutine(LoadImage(imageUrl, texture =>
+        //     {
+        //         // Set the albedo texture property of the material
+        //         material.SetTexture("_MainTex", texture);
+
+        //         // Create a new renderer for the VR image
+        //         Renderer renderer = vrImage.GetComponent<Renderer>();
+
+        //         // Fade out the current image
+        //         Material currentMaterial = renderer.material;
+        //         instance.StartCoroutine(FadeMaterial(currentMaterial, 1f, 0f, fadeTime, () =>
+        //         {
+        //             // Assign the new material to the renderer
+        //             renderer.material = material;
+
+        //             // Fade in the new image
+        //             instance.StartCoroutine(FadeMaterial(material, 0f, 1f, fadeTime, null));
+        //         }));
+
+        //         vrImage.name = imgName;
+        //         vrImage.transform.rotation = Quaternion.Euler(new Vector3(0, float.Parse(adjList[imgName][4]), 0));
+        //     if (adjList[imgName][0] != "-1")
+        //     {
+        //         rightButton.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         RightController.active = false;
+        //         rightButton.SetActive(false);
+        //     }
+        //     if (adjList[imgName][1] != "-1")
+        //     {
+        //         downButton.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         DownController.active = false;
+        //         downButton.SetActive(false);
+        //     }
+        //     if (adjList[imgName][2] != "-1")
+        //     {
+        //         leftButton.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         LeftController.active = false;
+        //         leftButton.SetActive(false);
+        //     }
+        //     if (adjList[imgName][3] != "-1")
+        //     {
+        //         upButton.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         UpController.active = false;
+        //         upButton.SetActive(false);
+        //     }
+
+        //     if (adjList[imgName][6] != "-1")
+        //     {
+        //         int myInt = int.Parse(adjList[imgName][6]);
+        //         VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
+        //         imageLoader1.myAudioSource.loop = true;
+        //         imageLoader1.myAudioSource.clip = imageLoader1.audioClips[myInt - 1];
+        //         imageLoader1.myAudioSource.Play();
+        //     }
+        //     else
+        //     {
+        //         VRImageLoader imageLoader1 = FindObjectOfType<VRImageLoader>();
+        //         imageLoader1.myAudioSource.clip = null;
+        //     }
+        //     }));
+        // }
+
+        // public static IEnumerator LoadImage(string url, System.Action<Texture2D> callback)
+        // {
+        //     // Load the image from the Resources folder
+        //     Texture2D texture = Resources.Load<Texture2D>(url);
+
+        //     // Invoke the callback with the loaded texture
+        //     callback(texture);
+
+        //     yield return null;
+        // }
+
+        // public static IEnumerator FadeMaterial(Material material, float startAlpha, float endAlpha, float fadeTime, System.Action onComplete)
+        // {
+        //     // Set the initial alpha value
+        //     Color color = material.color;
+        //     color.a = startAlpha;
+        //     material.color = color;
+
+        //     // Calculate the duration of the fade
+        //     float duration = Mathf.Max(fadeTime, 0.01f);
+
+        //     // Fade the material over time
+        //     float startTime = Time.time;
+        //     float endTime = startTime + duration;
+        //     while (Time.time < endTime)
+        //     {
+        //         float t = (Time.time - startTime) / duration;
+        //         color.a = Mathf.Lerp(startAlpha, endAlpha, t);
+        //         material.color = color;
+        //         yield return null;
+        //     }
+
+        //     // Set the final alpha value
+        //     color.a = endAlpha;
+        //     material.color = color;
+
+        //     // Invoke the onComplete callback
+        //     onComplete?.Invoke();
+        // }
+
 }

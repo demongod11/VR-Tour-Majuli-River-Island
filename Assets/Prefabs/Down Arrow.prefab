@@ -91,9 +91,10 @@ GameObject:
   - component: {fileID: 7208462652284147429}
   - component: {fileID: 7208462652284147430}
   - component: {fileID: 2273846359954185803}
+  - component: {fileID: -1528961127351984928}
   m_Layer: 0
   m_Name: Down Arrow
-  m_TagString: Untagged
+  m_TagString: Down Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +166,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7aa5f4c242fff47a0584708f26cccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1528961127351984928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7550552260064570356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8aaaefef34d7844eac629f58fac9dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7553333145444155192

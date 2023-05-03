@@ -91,9 +91,10 @@ GameObject:
   - component: {fileID: 8594733346803485286}
   - component: {fileID: 8594733346803485285}
   - component: {fileID: 919132148342866632}
+  - component: {fileID: 5765718198555984630}
   m_Layer: 0
   m_Name: Right Arrow
-  m_TagString: Untagged
+  m_TagString: Right Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +166,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7aa5f4c242fff47a0584708f26cccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5765718198555984630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901304880142481271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7e3415d3b431b4780ba0241bd74c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8907538007915881403
