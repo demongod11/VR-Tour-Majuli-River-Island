@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public void ShiftRight()
     {
-        imgName = VRImageLoader.vrImage.name;
+        string imgName_1 = VRImageLoader.vrImage.name;
+        imgName = imgName_1.Remove(imgName_1.Length-2,2);
         rightImgName = VRImageLoader.adjList[imgName][0];
 
         if (rightImgName != "-1")
@@ -22,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
     public void ShiftDown()
     {
-        imgName = VRImageLoader.vrImage.name;
+        string imgName_1 = VRImageLoader.vrImage.name;
+        imgName = imgName_1.Remove(imgName_1.Length-2,2);
         downImgName = VRImageLoader.adjList[imgName][1];
 
         if (downImgName != "-1")
@@ -34,7 +36,8 @@ public class PlayerController : MonoBehaviour
 
     public void ShiftLeft()
     {
-        imgName = VRImageLoader.vrImage.name;
+        string imgName_1 = VRImageLoader.vrImage.name;
+        imgName = imgName_1.Remove(imgName_1.Length-2,2);
         leftImgName = VRImageLoader.adjList[imgName][2];
 
         if (leftImgName != "-1")
@@ -46,7 +49,8 @@ public class PlayerController : MonoBehaviour
 
     public void ShiftUp()
     {
-        imgName = VRImageLoader.vrImage.name;
+        string imgName_1 = VRImageLoader.vrImage.name;
+        imgName = imgName_1.Remove(imgName_1.Length-2,2);
         upImgName = VRImageLoader.adjList[imgName][3];
 
         if (upImgName != "-1")
@@ -61,6 +65,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log(curPin);
         GameObject nxtPin = GameObject.Find(str2);
         Debug.Log(nxtPin);
+        Debug.Log(nxtPin.tag);
+        // Debug.Log(nxtPin.name)
         curPin.GetComponent<Image>().color = Color.white;
         nxtPin.GetComponent<Image>().color = Color.red;
     }

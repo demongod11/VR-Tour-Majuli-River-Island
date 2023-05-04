@@ -82,6 +82,8 @@ public class VRImageLoader : MonoBehaviour
             myAudioSource = GetComponent<AudioSource>();
         }
         vrImage = Instantiate(vrImagePrefab);
+        vrImage.tag = "hello";
+        Debug.Log("the tag is : " + vrImage.tag);
         rightButton = Instantiate(RightButtonPrefab);
         rightButton.SetActive(false);
         downButton = Instantiate(DownButtonPrefab);
@@ -110,7 +112,7 @@ public class VRImageLoader : MonoBehaviour
 
             // Assign the material to a game object or renderer
             vrImage.GetComponent<Renderer>().material = material;
-            vrImage.name = imgName;
+            vrImage.name = imgName+"_1";
             vrImage.transform.rotation = Quaternion.Euler(new Vector3(0, float.Parse(adjList[imgName][4]), 0));
             if (adjList[imgName][0] != "-1")
             {

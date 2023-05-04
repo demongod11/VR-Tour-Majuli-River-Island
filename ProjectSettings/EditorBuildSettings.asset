@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: a036aaa12c0322e48bfd88f28ed2d315
+  - enabled: 1
     path: Assets/Scenes/IntroScene.unity
     guid: f900a577239db9241981ad2d2a8cac9a
-  - enabled: 0
-    path: Assets/Scenes/LoadScene.unity
-    guid: ecee79d0d5b0d6640bdbfb8ce9979112
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Boattravelvideo.unity
     guid: 811e7986cdd34b94cbecfef2e428dc8d
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

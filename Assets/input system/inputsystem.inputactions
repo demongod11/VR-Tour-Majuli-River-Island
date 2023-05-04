@@ -76,6 +76,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "boatskip",
+            "id": "da565d62-6e91-4080-9b77-d5ff2501fde2",
+            "actions": [
+                {
+                    "name": "skipBoat",
+                    "type": "Button",
+                    "id": "b5060c10-3ee1-43da-86ff-ff1943141279",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9423588e-c90c-46fc-8c85-d323c3260802",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "skipBoat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

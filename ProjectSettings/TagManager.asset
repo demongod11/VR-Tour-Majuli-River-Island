@@ -20,6 +20,14 @@ TagManager:
   - Left Button
   - Up Button
   - Down Button
+  - 6_min
+  - 7_min
+  - 0_min
+  - 4_min
+  - 3_min
+  - 5_min
+  - 1_min
+  - hello
   layers:
   - Default
   - TransparentFX
