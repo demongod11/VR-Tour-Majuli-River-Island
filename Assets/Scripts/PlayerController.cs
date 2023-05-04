@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         if (rightImgName != "-1")
         {
             VRImageLoader.ImageLoader(rightImgName);
-            //miniMap(imgName,rightImgName);
+            miniMap(imgName,rightImgName);
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         if (downImgName != "-1")
         {
             VRImageLoader.ImageLoader(downImgName);
-            //miniMap(imgName,downImgName);
+            miniMap(imgName,downImgName);
         }
     }
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         if (leftImgName != "-1")
         {
             VRImageLoader.ImageLoader(leftImgName);
-            //miniMap(imgName,leftImgName);
+            miniMap(imgName,leftImgName);
         }
     }
 
@@ -52,13 +52,15 @@ public class PlayerController : MonoBehaviour
         if (upImgName != "-1")
         {
             VRImageLoader.ImageLoader(upImgName);
-            //miniMap(imgName,upImgName);
+            miniMap(imgName,upImgName);
         }
     }
 
     public void miniMap(string str1, string str2){
         GameObject curPin = GameObject.Find(str1);
+        Debug.Log(curPin);
         GameObject nxtPin = GameObject.Find(str2);
+        Debug.Log(nxtPin);
         curPin.GetComponent<Image>().color = Color.white;
         nxtPin.GetComponent<Image>().color = Color.red;
     }
