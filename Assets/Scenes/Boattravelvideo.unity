@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832743828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2b4aac5f7f15bb41ad2e66b082dffc1, type: 3}
   m_Name: 
@@ -1616,8 +1616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69d9dc21a289a3468fe75b82aa204d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 1061750637}
-  skipbutton: {fileID: 684413571}
 --- !u!1 &1984800350
 GameObject:
   m_ObjectHideFlags: 0

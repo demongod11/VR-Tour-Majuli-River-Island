@@ -58,7 +58,9 @@ public class PlayerController : MonoBehaviour
 
     public void miniMap(string str1, string str2){
         GameObject curPin = GameObject.Find(str1);
+        Debug.Log(curPin);
         GameObject nxtPin = GameObject.Find(str2);
+        Debug.Log(nxtPin);
         curPin.GetComponent<Image>().color = Color.white;
         nxtPin.GetComponent<Image>().color = Color.red;
     }
